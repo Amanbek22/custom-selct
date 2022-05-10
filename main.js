@@ -33,9 +33,10 @@ function onSelect(event, dropdownBlock, arr, selectBtn, dropList) {
   selectBtn.append(closeBtn);
 
   closeBtn.addEventListener("click", (e) => {
+    console.log(selectBtn);
     e.stopPropagation();
     arr.length = [];
-    selectBtn.innerText = "Пол";
+    selectBtn.innerText = "Выбрать";
 
     const check = dropdownBlock.classList.contains("show");
     if (check) {
@@ -49,7 +50,7 @@ function onSelect(event, dropdownBlock, arr, selectBtn, dropList) {
 
   // Replace if empty array;
   if (!arr.filter((i) => i !== null).length) {
-    selectBtn.innerHTML = "Выпадаюший";
+    selectBtn.innerHTML = "Выбрать";
     img.classList.add("down");
     selectBtn.append(img);
   }

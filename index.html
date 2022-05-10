@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
 
-  <body>
-    <div class="filter-block">
-      <div class="filter">
-        <img id="filterIcon" src="filter.png" alt="filter" />
-        Фильтр
-      </div>
-      <div class="filter-block-content">
-        <div class="inputs__wrapper">
-          <input type="date" id="first-datePicker" pattern="dd.mm.yyyy" />
-          <input type="date" id="second-datePicker" pattern="dd.mm.yyyy" />
-          <div class="buttons__wrapper">
-            <button id="todayTime">сегодня</button>
-            <button id="yesterday">Вчера</button>
-            <button id="prevWeek">Пред.неделя</button>
-            <button id="prevMonth">Пред.месяц</button>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="filter-block">
+    <div class="filter">
+      <img id="filterIcon" src="filter.png" alt="filter" />
+      Фильтр
+    </div>
+    <div class="filter-block-content">
+      <div class="inputs__wrapper">
+        <input type="date" id="first-datePicker" pattern="dd.mm.yyyy" />
+        <input type="date" id="second-datePicker" pattern="dd.mm.yyyy" />
+        <div class="buttons__wrapper">
+          <button id="todayTime">сегодня</button>
+          <button id="yesterday">Вчера</button>
+          <button id="prevWeek">Пред.неделя</button>
+          <button id="prevMonth">Пред.месяц</button>
         </div>
-        <div class="dropdown__wrapper">
+      </div>
+      <div class="dropdown__wrapper">
+        <label>
+          Пол
           <div class="dropdown">
             <button class="dropbtn">
-              Пол
+              Выбрать
               <img id="down" src="./down.png" alt="\/" />
             </button>
             <div id="myDropdown" class="dropdown-content">
@@ -39,9 +42,12 @@
               </div>
             </div>
           </div>
+        </label>
+        <label>
+          Предмет
           <div class="dropdown">
             <button class="dropbtn">
-              Предмет
+              Выбрать
               <img id="down" src="./down.png" alt="\/" />
             </button>
             <div id="myDropdown" class="dropdown-content">
@@ -57,9 +63,11 @@
               </div>
             </div>
           </div>
-        </div>
+        </label>
       </div>
     </div>
-    <script src="./main.js"></script>
-  </body>
+  </div>
+  <script src="./main.js"></script>
+</body>
+
 </html>

@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
 .dropbtn {
   background-color: #4caf50;
   color: white;
@@ -7,7 +12,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  grid-gap: 2em;
+  grid-gap: 6.5em;
 }
 
 /* Кнопка выпадающего меню при наведении и фокусировке */
@@ -17,12 +22,8 @@
 }
 
 .dropbtn > img {
-    width: 25px;
-    transition: all 0.2s linear;
-}
-
-.down {
-    transform: rotateZ(-180deg);
+  width: 25px;
+  transition: all 0.2s linear;
 }
 
 /* Поле поиска */
@@ -47,6 +48,8 @@
 .dropdown {
   position: relative;
   display: inline-block;
+  margin-right: 20px;
+  margin-top: 15px;
 }
 
 /* Выпадающее содержимое (скрыто по умолчанию) */
@@ -67,18 +70,101 @@
   display: block;
 }
 
-
 /* Показать выпадающее меню (используйте JS, чтобы добавить этот класс в .dropdown-content содержимого, когда пользователь нажимает на кнопку выпадающего списка) */
 .show {
   display: block;
 }
 
 .drop-list {
-    max-height: 500px;
-    overflow-y: auto;
+  max-height: 500px;
+  overflow-y: auto;
 }
 
-
 .selected {
-    background: rgb(36, 54, 253);
+  background: rgb(36, 54, 253);
+}
+
+/* фильтр блок */
+.filter-block {
+  border: 2px solid grey;
+}
+
+.filter {
+  font-size: 23px;
+  background-image: linear-gradient(to bottom, white, #5fbdf7);
+  display: flex;
+  align-items: center;
+}
+
+.filter > img{
+  width: 20px;
+  cursor: pointer;
+  margin: 10px 10px;
+}
+
+.filter-block-content {
+  visibility: hidden;
+  height: 0px;
+  opacity: 0;
+  border-top: 2px solid gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+.filter-block-content.open{
+  visibility: visible;
+  height: auto;
+  opacity: 1;
+}
+.filter-block-inputs {
+  width: 32%;
+  margin-top: 15px;
+}
+
+.inputs-date-options {
+  display: flex;
+  justify-content: space-between;
+  justify-content: space-around;
+}
+
+.date-inputs {
+  margin-bottom: 13px;
+}
+
+.labels label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.inputs__wrapper {
+  margin-top: 20px;
+  width: 24%;
+}
+
+.inputs__wrapper > #first-datePicker {
+  margin-right: 20px;
+}
+
+.inputs__wrapper > input{
+  width: 155px;
+  height: 30px; 
+  border-radius: 7px;
+}
+
+.dropdown__wrapper {
+  margin-bottom: 20px;
+}
+
+.buttons__wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.buttons__wrapper > button {
+  border: none;
+  cursor: pointer;
+  background-color: white;
 }

@@ -166,7 +166,7 @@ $currentWeek.addEventListener("click", () => {
   let today = year + "-" + month + "-" + day;
   document.getElementById("second-datePicker").value = today;
   document.getElementById("first-datePicker").value = today;
-// let isoDate = new Date().toISOString() // get ISO date for backEnd
+  let isoDate = new Date().toISOString() // get ISO date for backEnd
 
 });
 

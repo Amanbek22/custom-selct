@@ -1,7 +1,7 @@
 const dropdownMain = document.querySelectorAll(".dropdown");
 const dropdownFunc = (el, dropdownBlock) => {
   const down = el.querySelector("#down");
-
+  console.log(down);
   dropdownBlock.classList.toggle("show");
   down.classList.toggle("down");
 };
@@ -33,7 +33,6 @@ function onSelect(event, dropdownBlock, arr, selectBtn, dropList) {
   selectBtn.append(closeBtn);
 
   closeBtn.addEventListener("click", (e) => {
-    console.log(selectBtn);
     e.stopPropagation();
     arr.length = [];
     selectBtn.innerText = "Выбрать";
@@ -75,8 +74,9 @@ dropdownMain.forEach((el) => {
 
   dropList.addEventListener("click", (e) => {
     onSelect(e, dropdownBlock, firstDrodown, selectBtn, dropList);
+    console.log(firstDrodown);
   });
-
+  console.log(el);
   document.addEventListener("click", (e) => {
     if (dropdownBlock.contains(e.target) || selectBtn.contains(e.target)) {
       return null;
@@ -152,13 +152,29 @@ $prevMonth.addEventListener("click", () => {
   document.getElementById("first-datePicker").value = today;
 });
 
+// change input value to current week
+const $currentWeek = document.querySelector("#currentWeek");
+$currentWeek.addEventListener("click", () => {
+  let date = new Date();
+  let day = date.getDate() - 7;
+  let month = date.getMonth() + 1;
+  let year = date.getFullYear();
+
+  if (month < 10) month = "0" + month;
+  if (day < 10) day = "0" + day;
+  
+  let today = year + "-" + month + "-" + day;
+  document.getElementById("second-datePicker").value = today;
+  document.getElementById("first-datePicker").value = today;
+// let isoDate = new Date().toISOString() // get ISO date for backEnd
+
+});
+
 //// FILTER
 function filterFunction(el) {
-  console.log(el);
   var input, filter, ul, li, a, i;
   input = el.querySelector("#myInput");
   filter = input.value.toUpperCase();
-  console.log(filter);
   div = el.querySelector("#myDropdown");
   a = div.getElementsByTagName("a");
   for (i = 0; i < a.length; i++) {
@@ -171,6 +187,12 @@ function filterFunction(el) {
   }
 }
 
+// clear input value on click
+const $deleteBtn = document.querySelector("#clearInput");
+$deleteBtn.addEventListener("click", () => {
+  document.getElementById("myInput").value = "";
+});
+
 // the appearance of the filter on click
 const $filterBlock = document.querySelector(".filter-block-content");
 const $filterIcon = document.getElementById("filterIcon");
@@ -178,14 +200,15 @@ $filterIcon.addEventListener("click", () => {
   $filterBlock.classList.toggle("open");
 });
 
-// fetch data for input
+// fetch data for subject-input
 async function fetchData() {
-  const options = document.querySelectorAll("#input-options");
-  let res = await fetch(
-    "https://61dd7484f60e8f0017668817.mockapi.io/input-options"
-  );
+  const options = document.querySelector("#subject-drop-list");
+  let res = await fetch("http://test202021.azurewebsites.net/likeCourses");
   let data = await res.json();
-  data.map((option, index) => (options[index].innerText = option.option));
+  options.innerHTML = ""
+  data.map((item) => options.insertAdjacentHTML(
+    "afterbegin",`<a id="#input-options" href="#about">${item}</a>`)
+  )
 }
 
 // Enums for gender option

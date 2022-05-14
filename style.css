@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
@@ -64,6 +64,14 @@
   z-index: 1;
 }
 
+#clearInput {
+  position: absolute;
+  width: 15px;
+  right: 15px;
+  top: 14px;
+  cursor: pointer;
+}
+
 /* Ссылки внутри выпадающего списка */
 .dropdown-content a {
   color: black;
@@ -98,7 +106,7 @@
   align-items: center;
 }
 
-.filter > img{
+.filter > img {
   width: 20px;
   cursor: pointer;
   margin: 10px 10px;
@@ -114,7 +122,7 @@
   align-items: center;
   transition: all 0.3s ease-in-out;
 }
-.filter-block-content.open{
+.filter-block-content.open {
   visibility: visible;
   height: auto;
   opacity: 1;
@@ -142,15 +150,16 @@
 
 .inputs__wrapper {
   margin-top: 20px;
+  width: 30%;
 }
 
 .inputs__wrapper > #first-datePicker {
   margin-right: 20px;
 }
 
-.inputs__wrapper > input{
+.inputs__wrapper > input {
   width: 155px;
-  height: 30px; 
+  height: 30px;
   border-radius: 7px;
 }
 
@@ -179,4 +188,9 @@
   border: none;
   cursor: pointer;
   background-color: white;
+}
+
+.down {
+  transition: transform 2.9s;
+  transform: rotate(180deg);
 }

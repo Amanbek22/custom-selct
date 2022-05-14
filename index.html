@@ -1,73 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="./style.css" />
-</head>
-
-<body>
-  <div class="filter-block">
-    <div class="filter">
-      <img id="filterIcon" src="filter.png" alt="filter" />
-      Фильтр
-    </div>
-    <div class="filter-block-content">
-      <div class="inputs__wrapper">
-        <input type="date" id="first-datePicker" pattern="dd.mm.yyyy" />
-        <input type="date" id="second-datePicker" pattern="dd.mm.yyyy" />
-        <div class="buttons__wrapper">
-          <button id="todayTime">сегодня</button>
-          <button id="yesterday">Вчера</button>
-          <button id="prevWeek">Пред.неделя</button>
-          <button id="prevMonth">Пред.месяц</button>
+  <body>
+    <div class="filter-block">
+      <div class="filter">
+        <img id="filterIcon" src="filter.png" alt="filter" />
+        Фильтр
+      </div>
+      <div class="filter-block-content">
+        <div class="inputs__wrapper">
+          <input type="date" id="first-datePicker" pattern="dd.mm.yyyy" />
+          <input type="date" id="second-datePicker" pattern="dd.mm.yyyy" />
+          <div class="buttons__wrapper">
+            <button id="todayTime">сегодня</button>
+            <button id="yesterday">Вчера</button>
+            <button id="currentWeek">Текущая неделя</button>
+            <button id="prevWeek">Пред.неделя</button>
+            <button id="prevMonth">Пред.месяц</button>
+          </div>
+        </div>
+        <div class="dropdown__wrapper">
+          <label>
+            Пол
+            <div class="dropdown">
+              <button class="dropbtn">
+                Выбрать
+                <img id="down" src="./down.png" alt="\/" />
+              </button>
+              <div id="myDropdown" class="dropdown-content">
+                <input type="text" placeholder="Search.." id="myInput" />
+                <img
+                  id="clearInput"
+                  src="free-icon-close-151882.png"
+                  alt="\/"
+                />
+                <div id="gender-drop-list" class="drop-list">
+                  <a id="gender-male" href="#about"></a>
+                  <a id="gender-female" href="#base"></a>
+                </div>
+              </div>
+            </div>
+          </label>
+          <label>
+            Предмет
+            <div class="dropdown">
+              <button class="dropbtn">
+                Выбрать
+                <img id="down" src="./down.png" alt="\/" />
+              </button>
+              <div id="myDropdown" class="dropdown-content">
+                <input type="text" placeholder="Search.." id="myInput" />
+                <img
+                  id="clearInput"
+                  src="free-icon-close-151882.png"
+                  alt="\/"
+                />
+                <div id="subject-drop-list" class="drop-list"></div>
+              </div>
+            </div>
+          </label>
         </div>
       </div>
-      <div class="dropdown__wrapper">
-        <label>
-          Пол
-          <div class="dropdown">
-            <button class="dropbtn">
-              Выбрать
-              <img id="down" src="./down.png" alt="\/" />
-            </button>
-            <div id="myDropdown" class="dropdown-content">
-              <input type="text" placeholder="Search.." id="myInput" />
-              <div class="drop-list">
-                <a id="gender-male" href="#about"></a>
-                <a id="gender-female" href="#base"></a>
-              </div>
-            </div>
-          </div>
-        </label>
-        <label>
-          Предмет
-          <div class="dropdown">
-            <button class="dropbtn">
-              Выбрать
-              <img id="down" src="./down.png" alt="\/" />
-            </button>
-            <div id="myDropdown" class="dropdown-content">
-              <input type="text" placeholder="Search.." id="myInput" />
-              <div class="drop-list">
-                <a id="input-options" href="#about">О Нас</a>
-                <a id="input-options" href="#base">Основа</a>
-                <a id="input-options" href="#blog">Блог</a>
-                <a id="input-options" href="#contact">Контакт</a>
-                <a id="input-options" href="#custom">Заказ</a>
-                <a id="input-options" href="#support">Поддержка</a>
-                <a id="input-options" href="#tools">Инструменты</a>
-              </div>
-            </div>
-          </div>
-        </label>
-      </div>
     </div>
-  </div>
-  <script src="./main.js"></script>
-</body>
-
+    <script src="./main.js"></script>
+  </body>
 </html>
